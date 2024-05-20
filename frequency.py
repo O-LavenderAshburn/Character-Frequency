@@ -1,13 +1,13 @@
-import os
-import math
-from operator import itemgetter
+"""
+Script to count the frequency of characters that apair in cyphertext
 
-
-freq = [0] * 99
-dictionarys = []
+"""
 
 
 def analyse_cyphertext():
+    """Read in Cyphertext and write out frequency"""
+    dictionarys = []
+    freq == [0] * 99
     # open file
     with open("ciphertext2.txt", "r") as file:
         content = file.read()
@@ -35,20 +35,7 @@ def analyse_cyphertext():
         file.write("total: %2d" % (total))
 
 
-def decrypt(mapped_dict):
-    # read and close cypher_text2
-    cypher_text = open("ciphertext2.txt", "r")
-    text = cypher_text.read()
-    numbers = text.split(" ")
-    cypher_text.close()
-
-    with open("decypher.txt", "w") as file:
-
-        for i in range(len(numbers)):
-            current_num = numbers[i]
-            letter = get_mapped(mapped_dict, current_num)
-            if letter is not None:
-                file.write(letter)
-
+global freq
+global dictionarys
 
 analyse_cyphertext()
